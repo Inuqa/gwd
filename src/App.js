@@ -1,23 +1,31 @@
+import React from 'react'
 import logo from './logo.svg';
 import './App.css';
 
+import heroes from './data.js'
+
+import Card from './components/card'
+
 function App() {
+  const [selCard, setSelCard] = React.useState(false)
+
+  const selectedCard = (a) => {
+    if (selCard === false) {
+      setSelCard(a)
+    }
+  }
+
+  const cardData = heroes.map((item) => <section className="c" key={item.id}><Card name={item.localized_name} image={item.image} item={item}  select={selectedCard}/></section>)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="playing-cards">
+        {cardData}
+      </div>
+      <hr />
+      <div className="selected">
+        {selCard ? (<Card name={selCard.localized_name} image={selCard.image} />) : (<p>select your card</p>)}
+      </div>
     </div>
   );
 }
