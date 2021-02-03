@@ -1,0 +1,2 @@
+.playing-cards{display:flex;justify-content:center;flex-wrap:wrap}.c{width:auto}.selected{display:flex;justify-content:center}.App{margin:30px}.card:hover{box-shadow:0 6px 15px rgba(0,0,0,.25)}.card,.card:hover{transition:box-shadow .3s ease-in-out}.card{padding:10px;border-radius:20px;margin-left:5px;margin-right:5px;box-shadow:0 2px 5px rgba(0,0,0,.15);text-align:center}.back{background:#000}
+/*# sourceMappingURL=main.638e20f2.chunk.css.map */
